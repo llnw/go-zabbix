@@ -74,7 +74,7 @@ func (c *Session) CreateUserMacros(macros ...HostMacro) (hostMacroIds []string, 
 func (c *Session) DeleteUserMacros(hostMacroIDs ...string) (hostMacroIds []string, err error) {
 	var body UserMacroResponse
 
-	if err := c.Get("usermacro.delete", hostMacroIds, &body); err != nil {
+	if err := c.Get("usermacro.delete", hostMacroIDs, &body); err != nil {
 		return nil, err
 	}
 
@@ -92,7 +92,7 @@ func (c *Session) DeleteUserMacros(hostMacroIDs ...string) (hostMacroIds []strin
 func (c *Session) UpdateUserMacros(macros ...HostMacro) (hostMacroIds []string, err error) {
 	var body UserMacroResponse
 
-	if err := c.Get("usermacro.update", hostMacroIds, &body); err != nil {
+	if err := c.Get("usermacro.update", macros, &body); err != nil {
 		return nil, err
 	}
 
