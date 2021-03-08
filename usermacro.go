@@ -42,10 +42,6 @@ func (c *Session) GetUserMacro(params UserMacroGetParams) ([]HostMacro, error) {
 		return nil, err
 	}
 
-	if len(macros) == 0 {
-		return nil, ErrNotFound
-	}
-
 	return macros, nil
 }
 
